@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://k30ax5tvs10r"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_hcimq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq655"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hstgb"]
+material = SubResource("StandardMaterial3D_gq655")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e82bh"]
+height = 0.724515
+radius = 0.266172
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gudgl"]
+albedo_color = Color(0.105882, 0.360784, 0.337255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_imlnm"]
+material = SubResource("StandardMaterial3D_gudgl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38shi"]
+albedo_color = Color(0.317647, 0.317647, 0.317647, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_om78i"]
+material = SubResource("StandardMaterial3D_38shi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uq013"]
+albedo_color = Color(0.380392, 0.380392, 0.380392, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xs1i6"]
+material = SubResource("StandardMaterial3D_uq013")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fi5s"]
+size = Vector3(2.11377, 0.523315, 0.474121)
+
+[node name="Tool" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="XRToolsPickable" type="RigidBody3D" parent="RigidBody3D"]
+script = ExtResource("1_hcimq")
+picked_up_layer = 65537
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(0.541867, 0, 0, 0, 0.520656, 0, 0, 0, 0.440362, 0, -0.545839, 0)
+mesh = SubResource("CylinderMesh_hstgb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.685344, 0)
+shape = SubResource("CylinderShape3D_e82bh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(1.76842, 0, 0, 0, 0.561325, 0, 0, 0, 0.324662, -0.408449, 0, 0)
+mesh = SubResource("BoxMesh_imlnm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 0.456883, -0.0233341, -0.212615, 0)
+mesh = SubResource("PrismMesh_om78i")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(-1.1513e-08, -0.226637, 0, 0.263387, -9.9066e-09, 0, 0, 0, -0.268993, -1.40586, -6.14521e-08, 0)
+mesh = SubResource("CylinderMesh_xs1i6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D/XRToolsPickable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.556885, -0.00860596, -0.00561523)
+shape = SubResource("BoxShape3D_6fi5s")

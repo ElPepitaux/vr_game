@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbw6mkbr576b3"]
+
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="1_cd7nc"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="2_g5jrl"]
+
+[node name="LeftHand" type="Node3D"]
+
+[node name="LeftControl" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364271, 0.204762, 0.0496318)
+tracker = &"left_hand"
+
+[node name="MovementDirect" parent="LeftControl" instance=ExtResource("1_cd7nc")]
+strafe = true
+
+[node name="LeftHand" parent="LeftControl" instance=ExtResource("2_g5jrl")]
