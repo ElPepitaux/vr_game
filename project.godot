@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+PlayerState="*res://player_state.gd"
 
 [editor_plugins]
 

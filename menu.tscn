@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://vdjhdvphd42l"]
+[gd_scene load_steps=5 format=3 uid="uid://vdjhdvphd42l"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_khnd1"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="1_ob3pg"]
+[ext_resource type="Script" path="res://menu.gd" id="1_wialg"]
+[ext_resource type="PackedScene" uid="uid://dsnxgrl26oxni" path="res://ui/control.tscn" id="2_e8pyk"]
 
 [node name="Menu" type="Node3D"]
+script = ExtResource("1_wialg")
+
+[node name="VirtualKeyboard" parent="." instance=ExtResource("1_ob3pg")]
+transform = Transform3D(1, 0, 0, 0, 0.713654, 0.700498, 0, -0.700498, 0.713654, 0, -0.870918, 0.77215)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_khnd1")]
+scene = ExtResource("2_e8pyk")
+viewport_size = Vector2(650, 250)
+unshaded = true

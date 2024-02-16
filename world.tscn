@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc3u6vlse8fld"]
+[gd_scene load_steps=10 format=3 uid="uid://cc3u6vlse8fld"]
 
 [ext_resource type="PackedScene" uid="uid://brmx3jjmukxhk" path="res://player.tscn" id="1_o86hh"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_wpyha"]
+[ext_resource type="PackedScene" uid="uid://vdjhdvphd42l" path="res://menu.tscn" id="3_e8s8i"]
+[ext_resource type="PackedScene" uid="uid://c2bfs00r5b4xy" path="res://vr_leader_bord.tscn" id="4_cwk2s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fd0ue"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -45,3 +47,9 @@ shape = SubResource("BoxShape3D_goi58")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688267, 0.45675)
 
 [node name="StartXR" parent="." instance=ExtResource("2_wpyha")]
+
+[node name="Menu" parent="." instance=ExtResource("3_e8s8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25822, 1.20029, -1.44055)
+
+[node name="vrLeaderBord" parent="." instance=ExtResource("4_cwk2s")]
+transform = Transform3D(-0.0360681, 0, 0.999349, 0, 1, 0, -0.999349, 0, -0.0360681, -2.26423, 1.06456, 0.858151)
