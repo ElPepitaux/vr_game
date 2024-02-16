@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://clegkq7rc8k5s"]
+[gd_scene load_steps=8 format=3 uid="uid://clegkq7rc8k5s"]
 
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_0l2pa"]
 [ext_resource type="PackedScene" uid="uid://brmx3jjmukxhk" path="res://player.tscn" id="1_wnrvv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7glvy"]
@@ -19,9 +20,11 @@ glow_enabled = true
 size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2o72"]
-size = Vector3(7.93982, 0.58606, 8.12537)
+size = Vector3(10, 0.58606, 9)
 
 [node name="Map" type="Node3D"]
+
+[node name="StartXR" parent="." instance=ExtResource("1_0l2pa")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -38,7 +41,7 @@ mesh = SubResource("QuadMesh_7qcd0")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881042, -0.20697, -0.117981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149048, -0.20697, 0.319334)
 shape = SubResource("BoxShape3D_x2o72")
 
 [node name="Player" parent="." instance=ExtResource("1_wnrvv")]

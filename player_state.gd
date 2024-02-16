@@ -1,3 +1,3 @@
 extends Node
 
-var NAME = ""
+@onready var NAME = ""

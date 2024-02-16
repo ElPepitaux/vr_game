@@ -6,7 +6,7 @@
 [node name="vrLeaderBord" type="Node3D"]
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_xw1qk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00522864, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.419247, 0)
 scene = ExtResource("2_rjf73")
 viewport_size = Vector2(750, 250)
 unshaded = true

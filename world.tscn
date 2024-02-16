@@ -52,4 +52,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688267, 0.45675)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25822, 1.20029, -1.44055)
 
 [node name="vrLeaderBord" parent="." instance=ExtResource("4_cwk2s")]
-transform = Transform3D(-0.0360681, 0, 0.999349, 0, 1, 0, -0.999349, 0, -0.0360681, -2.26423, 1.06456, 0.858151)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26423, 1.06456, 0.858151)
