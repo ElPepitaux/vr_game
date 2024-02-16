@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhsre5mpa72n4"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_lohu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8al48"]
+albedo_color = Color(0.580392, 0.580392, 0.580392, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fudjj"]
+material = SubResource("StandardMaterial3D_8al48")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1udcl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p8c6p"]
+material = SubResource("StandardMaterial3D_1udcl")
+
+[node name="Wheel" type="Node3D"]
+
+[node name="XRToolsPickable" type="RigidBody3D" parent="."]
+script = ExtResource("1_lohu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsPickable"]
+transform = Transform3D(1.22909, 0, 0, 0, -1.64428e-08, -1.29061, 0, 0.376168, -5.64144e-08, 0, -3.12746e-09, 0.0715479)
+mesh = SubResource("CylinderMesh_fudjj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="XRToolsPickable"]
+transform = Transform3D(1.48459, 0, 0, 0, -1.64677e-08, -1.44767, 0, 0.376736, -6.32795e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_p8c6p")
