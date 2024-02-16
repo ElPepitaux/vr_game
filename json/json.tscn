@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crlegnki524m1"]
+
+[ext_resource type="Script" path="res://json/JSON.gd" id="1_cod6o"]
+
+[node name="JSON" type="Node"]
+script = ExtResource("1_cod6o")
