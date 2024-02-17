@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://brmx3jjmukxhk"]
+[gd_scene load_steps=7 format=3 uid="uid://brmx3jjmukxhk"]
 
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="1_m82rn"]
-[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_vojah"]
-[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_qpspu"]
+[ext_resource type="PackedScene" uid="uid://bpdj5njb8nhot" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_hand.tscn" id="2_f5h81"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_d5e0c"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_f7e7o"]
+[ext_resource type="PackedScene" uid="uid://d1tl07geqm5xq" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_fullglove_hand.tscn" id="4_yhb47"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_ylecs"]
 
 [node name="Player" type="XROrigin3D"]
@@ -11,6 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406954, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436644, -0.0293858)
+current = true
 
 [node name="LeftControl" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364271, 0.204762, 0.0496318)
@@ -19,17 +21,23 @@ tracker = &"left_hand"
 [node name="MovementDirect" parent="LeftControl" instance=ExtResource("1_m82rn")]
 strafe = true
 
-[node name="LeftHand" parent="LeftControl" instance=ExtResource("1_vojah")]
+[node name="LeftHand" parent="LeftControl" instance=ExtResource("2_f5h81")]
+
+[node name="FunctionPickup" parent="LeftControl" instance=ExtResource("3_d5e0c")]
+grab_distance = 0.1
 
 [node name="XRController3D" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206958, 0.0727671)
 tracker = &"right_hand"
 
-[node name="RightHand" parent="XRController3D" instance=ExtResource("2_qpspu")]
-
 [node name="FunctionPointer" parent="XRController3D" instance=ExtResource("4_ylecs")]
 show_laser = 0
 show_target = true
 collision_mask = 4194304
+
+[node name="RightHand" parent="XRController3D" instance=ExtResource("4_yhb47")]
+
+[node name="FunctionPickup" parent="XRController3D" instance=ExtResource("3_d5e0c")]
+grab_distance = 0.1
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_f7e7o")]
