@@ -19,20 +19,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -402.0
 offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.435294, 1, 0.380392, 0.486275)
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 181.0
-offset_top = 53.0
-offset_right = 346.0
-offset_bottom = 76.0
-text = "azddaz"
-horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 125.0
-offset_right = 419.0
-offset_bottom = 165.0
+offset_left = 148.0
+offset_top = 80.0
+offset_right = 568.0
+offset_bottom = 485.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 40.0
+offset_right = 309.0
+offset_bottom = 63.0
+text = "LEADERBOARD
+"

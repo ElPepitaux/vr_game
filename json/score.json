@@ -1,10 +1,10 @@
 [
 	{
-		"name" : "toto",
-		"score" : 2000
+		"name": "aoto",
+		"value": 4000
 	},
 	{
-		"name" : "aoto",
-		"score" : 4000
-	}
+		"name": "toto",
+		"value": 2000
+	},
 ]

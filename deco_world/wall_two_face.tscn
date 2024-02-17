@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b121wheflxie"]
+
+[ext_resource type="PackedScene" uid="uid://cjkxnetj2p11c" path="res://deco_world/wall.tscn" id="1_lokgu"]
+
+[node name="wall_two_face" type="Node3D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_lokgu")]
+
+[node name="Wall2" parent="." instance=ExtResource("1_lokgu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

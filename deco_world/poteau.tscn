@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bll648sk1v5wt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n6d1j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l8lcx"]
+
+[node name="Poteau" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_n6d1j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_l8lcx")
