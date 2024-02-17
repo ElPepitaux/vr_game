@@ -14,3 +14,9 @@ func parseJson():
 			json_sort.append(j)
 	json_sort.sort_custom(custom_array_sort)
 	return json_sort
+
+func writeJson(data):
+	var json_string = JSON.stringify(data, "\t")
+	var file = FileAccess.open(file_path, FileAccess.READ_WRITE)
+	file.store_line(json_string)
+	
