@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://k855ckvrysq3"]
+[gd_scene load_steps=12 format=3 uid="uid://clegkq7rc8k5s"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_0l2pa"]
-[ext_resource type="PackedScene" uid="uid://k30ax5tvs10r" path="res://tool.tscn" id="2_5smqn"]
-[ext_resource type="PackedScene" uid="uid://r10nyt34y06a" path="res://in_game_player.tscn" id="3_0m11x"]
+[ext_resource type="PackedScene" uid="uid://brmx3jjmukxhk" path="res://player.tscn" id="1_wnrvv"]
+[ext_resource type="PackedScene" uid="uid://cjkxnetj2p11c" path="res://deco_world/wall.tscn" id="3_20dkr"]
+[ext_resource type="PackedScene" uid="uid://bll648sk1v5wt" path="res://deco_world/poteau.tscn" id="4_8fqkr"]
+[ext_resource type="PackedScene" uid="uid://bgobqt4jmqvgx" path="res://f_1.tscn" id="5_rh5o5"]
+[ext_resource type="PackedScene" uid="uid://b121wheflxie" path="res://deco_world/wall_two_face.tscn" id="6_ahpqm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7glvy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,10 +21,10 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_7qcd0"]
-size = Vector2(10, 10)
+size = Vector2(20, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2o72"]
-size = Vector3(10, 0.58606, 9)
+size = Vector3(19.8108, 0.58606, 20.0656)
 
 [node name="Map" type="Node3D"]
 
@@ -42,11 +45,44 @@ mesh = SubResource("QuadMesh_7qcd0")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149048, -0.20697, 0.319334)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0583494, -0.20697, -0.00364876)
 shape = SubResource("BoxShape3D_x2o72")
 
-[node name="Tool" parent="." instance=ExtResource("2_5smqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447276, -1.22946)
+[node name="Player" parent="." instance=ExtResource("1_wnrvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33135, 8.28401)
 
-[node name="InGamePlayer" parent="." instance=ExtResource("3_0m11x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994822, 0)
+[node name="Wall" parent="." instance=ExtResource("3_20dkr")]
+transform = Transform3D(22, 0, 0, 0, 15, 0, 0, 0, 1, 0.465004, 0.188457, -9.97622)
+
+[node name="Wall2" parent="." instance=ExtResource("3_20dkr")]
+transform = Transform3D(-9.61651e-07, 0, 1, 0, 15, 0, -22, 0, -4.37114e-08, -10.169, 0.249623, 0.0871956)
+
+[node name="Wall3" parent="." instance=ExtResource("3_20dkr")]
+transform = Transform3D(-25, 0, 8.74228e-08, 0, 15, 0, -2.18557e-06, 0, -1, -0.580004, 0.330555, 9.89196)
+
+[node name="Wall4" parent="." instance=ExtResource("3_20dkr")]
+transform = Transform3D(-1.09278e-06, 0, -1, 0, 15, 0, 25, 0, -4.37114e-08, 10.187, 0.175031, -0.119713)
+
+[node name="Poteau" parent="." instance=ExtResource("4_8fqkr")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 0.5, -4.00134, 1.1397, -3.19024)
+
+[node name="F1" parent="." instance=ExtResource("5_rh5o5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.25811, 0.496267, -0.0421312)
+
+[node name="Poteau2" parent="." instance=ExtResource("4_8fqkr")]
+transform = Transform3D(0.5, 0, 0, 0, -1.31134e-07, 0.5, 0, -3, -2.18557e-08, -3.99437, 2.94062, -0.259184)
+
+[node name="Poteau3" parent="." instance=ExtResource("4_8fqkr")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 0.5, 3.84115, 1.1397, -3.19024)
+
+[node name="Poteau4" parent="." instance=ExtResource("4_8fqkr")]
+transform = Transform3D(0.5, 0, 0, 0, -1.31134e-07, 0.5, 0, -3, -2.18557e-08, 3.79019, 2.94062, -0.387803)
+
+[node name="wall_two_face" parent="." instance=ExtResource("6_ahpqm")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -4.39598, 2.31752, -7.7005)
+
+[node name="wall_two_face2" parent="." instance=ExtResource("6_ahpqm")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 4.82471, 2.25916, -7.4893)
+
+[node name="wall_two_face3" parent="." instance=ExtResource("6_ahpqm")]
+transform = Transform3D(-4.37114e-07, 10, -4.37114e-07, 0, -4.37114e-07, -10, -10, -4.37114e-07, 1.91069e-14, 0.234299, 4.90434, -10.1755)
