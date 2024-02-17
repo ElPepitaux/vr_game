@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://clegkq7rc8k5s"]
+[gd_scene load_steps=9 format=3 uid="uid://k855ckvrysq3"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_0l2pa"]
-[ext_resource type="PackedScene" uid="uid://brmx3jjmukxhk" path="res://player.tscn" id="1_wnrvv"]
+[ext_resource type="PackedScene" uid="uid://k30ax5tvs10r" path="res://tool.tscn" id="2_5smqn"]
+[ext_resource type="PackedScene" uid="uid://r10nyt34y06a" path="res://in_game_player.tscn" id="3_0m11x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7glvy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,5 +45,8 @@ skeleton = NodePath("../CollisionShape3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149048, -0.20697, 0.319334)
 shape = SubResource("BoxShape3D_x2o72")
 
-[node name="Player" parent="." instance=ExtResource("1_wnrvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34781, 0)
+[node name="Tool" parent="." instance=ExtResource("2_5smqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447276, -1.22946)
+
+[node name="InGamePlayer" parent="." instance=ExtResource("3_0m11x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994822, 0)

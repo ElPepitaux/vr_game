@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://b50i43ye4qune"]
+[gd_scene load_steps=3 format=3 uid="uid://b50i43ye4qune"]
+
+[ext_resource type="Script" path="res://control_panel.gd" id="1_k3vl1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25xun"]
+font_size = 300
 
 [node name="ControlPanel" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k3vl1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -14,10 +20,16 @@ offset_right = 1151.0
 offset_bottom = 646.0
 color = Color(0, 0, 0.0352941, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="Minute" type="Label" parent="."]
 layout_mode = 0
-offset_left = 169.0
-offset_top = 131.0
-offset_right = 1015.0
-offset_bottom = 505.0
-text = "Time"
+offset_left = 104.0
+offset_top = 83.0
+offset_right = 1053.0
+offset_bottom = 546.0
+label_settings = SubResource("LabelSettings_25xun")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

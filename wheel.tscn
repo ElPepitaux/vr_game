@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhsre5mpa72n4"]
+[gd_scene load_steps=9 format=3 uid="uid://bhsre5mpa72n4"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_lohu5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8al48"]
-albedo_color = Color(0.580392, 0.580392, 0.580392, 1)
+albedo_color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fudjj"]
 material = SubResource("StandardMaterial3D_8al48")
@@ -14,15 +14,76 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_p8c6p"]
 material = SubResource("StandardMaterial3D_1udcl")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_vwaii"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4y80x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6ui8b"]
+
 [node name="Wheel" type="Node3D"]
 
 [node name="XRToolsPickable" type="RigidBody3D" parent="."]
 script = ExtResource("1_lohu5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsPickable"]
-transform = Transform3D(1.22909, 0, 0, 0, -1.64428e-08, -1.29061, 0, 0.376168, -5.64144e-08, 0, -3.12746e-09, 0.0715479)
+transform = Transform3D(1.22909, 0, 0, 0, -1.95774e-08, -1.29061, 0, 0.44788, -5.64144e-08, 0, 2.35441e-09, -0.0538629)
 mesh = SubResource("CylinderMesh_fudjj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="XRToolsPickable"]
 transform = Transform3D(1.48459, 0, 0, 0, -1.64677e-08, -1.44767, 0, 0.376736, -6.32795e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_p8c6p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="XRToolsPickable"]
+transform = Transform3D(0.975572, 0, 0, 0, -1.18054e-08, -0.901267, 0, 0.270076, -3.93957e-08, 0, 1.34429e-08, -0.307539)
+mesh = SubResource("CylinderMesh_fudjj")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374029, 0.466218)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.224935, 0, 0, 0, 0.230462, 0, 0, 0, 0.188068, 0, 0, 0)
+shape = SubResource("SphereShape3D_vwaii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.13506, 0, 0, 0, -2.8661e-09, -0.154208, 0, 0.0655688, -6.74064e-09, 0, 0, -0.0424387)
+mesh = SubResource("CylinderMesh_4y80x")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.374, 0.466)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(0.224935, 0, 0, 0, 0.230462, 0, 0, 0, 0.188068, 0, 0, 0)
+shape = SubResource("SphereShape3D_vwaii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2"]
+transform = Transform3D(0.13506, 0, 0, 0, -2.8661e-09, -0.154208, 0, 0.0655688, -6.74064e-09, 0, 0, -0.0424387)
+mesh = SubResource("CylinderMesh_4y80x")
+
+[node name="Area3D3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374, 0, 0.466)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(0.224935, 0, 0, 0, 0.230462, 0, 0, 0, 0.188068, 0, 0, 0)
+shape = SubResource("SphereShape3D_vwaii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D3"]
+transform = Transform3D(0.13506, 0, 0, 0, -2.8661e-09, -0.154208, 0, 0.0655688, -6.74064e-09, 0, 0, -0.0424387)
+mesh = SubResource("CylinderMesh_4y80x")
+
+[node name="Area3D4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374, 0, 0.466)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(0.224935, 0, 0, 0, 0.230462, 0, 0, 0, 0.188068, 0, 0, 0)
+shape = SubResource("SphereShape3D_vwaii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D4"]
+transform = Transform3D(0.13506, 0, 0, 0, -2.8661e-09, -0.154208, 0, 0.0655688, -6.74064e-09, 0, 0, -0.0424387)
+mesh = SubResource("CylinderMesh_4y80x")
+
+[node name="Area3D5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.644293)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.281996, 0, 0, 0.0682639)
+shape = SubResource("SphereShape3D_6ui8b")

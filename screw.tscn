@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl55pu6q0qo23"]
+[gd_scene load_steps=5 format=3 uid="uid://bl55pu6q0qo23"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_05uaj"]
 
@@ -8,9 +8,13 @@ albedo_color = Color(0.423529, 0.423529, 0.423529, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_rfqge"]
 material = SubResource("StandardMaterial3D_py4hk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsxx3"]
+size = Vector3(1, 0.65332, 1)
+
 [node name="Screw" type="Node3D"]
 
 [node name="XRToolsPickable" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_05uaj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsPickable"]
@@ -20,3 +24,9 @@ mesh = SubResource("CylinderMesh_rfqge")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="XRToolsPickable"]
 transform = Transform3D(0.838276, 0, 0, 0, 0.777078, 0, 0, 0, 0.807689, 0, 0.823228, 0)
 mesh = SubResource("CylinderMesh_rfqge")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17334, 0)
+shape = SubResource("BoxShape3D_jsxx3")
