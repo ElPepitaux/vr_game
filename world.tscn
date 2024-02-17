@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc3u6vlse8fld"]
+[gd_scene load_steps=11 format=3 uid="uid://cc3u6vlse8fld"]
 
 [ext_resource type="PackedScene" uid="uid://brmx3jjmukxhk" path="res://player.tscn" id="1_o86hh"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_wpyha"]
 [ext_resource type="PackedScene" uid="uid://vdjhdvphd42l" path="res://menu.tscn" id="3_e8s8i"]
 [ext_resource type="PackedScene" uid="uid://c2bfs00r5b4xy" path="res://vr_leader_bord.tscn" id="4_cwk2s"]
+[ext_resource type="PackedScene" uid="uid://cjkxnetj2p11c" path="res://deco_world/wall.tscn" id="5_qiiih"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fd0ue"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,10 +20,10 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_vnds6"]
-size = Vector2(5, 5)
+size = Vector2(7, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_goi58"]
-size = Vector3(4.90845, 0.519653, 4.95374)
+size = Vector3(9.11078, 0.519653, 7.74234)
 
 [node name="World" type="Node3D"]
 
@@ -40,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, -0.012025, 0.999928, 0, -0.999928, -0.012025
 mesh = SubResource("QuadMesh_vnds6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043335, -0.240173, 0.0715942)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178559, -0.240173, -0.0603186)
 shape = SubResource("BoxShape3D_goi58")
 
 [node name="Player" parent="." instance=ExtResource("1_o86hh")]
@@ -53,3 +54,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25822, 1.20029, -1.44055)
 
 [node name="vrLeaderBord" parent="." instance=ExtResource("4_cwk2s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26423, 1.06456, 0.858151)
+
+[node name="Wall" parent="." instance=ExtResource("5_qiiih")]
+transform = Transform3D(-4.37114e-07, 0, 5, 0, 4, 0, -10, 0, -2.18557e-07, -3.39313, 1.57248, -0.484252)
+
+[node name="Wall2" parent="." instance=ExtResource("5_qiiih")]
+transform = Transform3D(-10, 0, 3.49691e-07, 0, 4, 0, -8.74228e-07, 0, -4, 0.944886, 1.55438, 3.53976)
+
+[node name="Wall3" parent="." instance=ExtResource("5_qiiih")]
+transform = Transform3D(-3.0598e-07, 0, -1, 0, 5, 0, 7, 0, -4.37114e-08, 3.50269, 1.01399, -0.0762781)
+
+[node name="Wall4" parent="." instance=ExtResource("5_qiiih")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 8, -0.0263672, 0.0196534, -3.46218)
